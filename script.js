@@ -208,7 +208,84 @@ Example: basicCalculator(10, 5, 'subtract') should return 5.
 
 Complete the exercise in the space below:
 */
-
+const basicCalculator = (numA, numB, operation) => {
+    if (operation === "add") {
+        return numA + numB;
+    } else if (operation === "subtract") {
+        return numA - numB;
+    } else if (operation === "multiply") {
+        return numA * numB;
+    } else if (operation === "divide") {
+        return numA / numB;
+    }
+}
 
 
 console.log('Exercise 11 Result:', basicCalculator(10, 5, "subtract"));
+
+/*
+Exercise 12: calculateGrade()
+
+Define a function called calculateGrade. It should take a numerical score and return the corresponding letter grade (A, B, C, D, F). For example, 90 and above yields an 'A', 80-89 is a 'B', and 70-79 is a 'C', 60-69 is a 'D' and anything lower than a 60 is an 'F'.
+
+Example: calculateGrade(100) should return A.
+
+Complete the exercise in the space below:
+*/
+const calculateGrade = (grade) => {
+    if (grade >= 90) {
+        return "A";
+    } else if (80 <= grade <= 89) {
+        return "B";
+    } else if (70 <= grade <= 79) {
+        return "C";
+    } else if (60 <= grade <= 69) {
+        return "D";
+    } else if (grade < 60) {
+        return "F";
+    }
+}
+
+
+console.log('Exercise 12 Result:', calculateGrade(85));
+
+/*
+Exercise 13: createUsername()
+
+Define a function called createUsername. It should take a first name and a last name and return a username. The username should be a combination of the following:
+- The first three letters of the first name.
+- The first three letters of the last name.
+- The total character count of the first and last name combined.
+
+Example: createUsername('Samantha', 'Green') should return 'SamGre12'.
+
+Complete the exercise in the space below:
+*/
+const createUsername = (first, last) => {
+    let fir = ""
+    let las = ""
+    let length = first.length + last.length
+    for (let i = 0; i < 3; i++) {
+        fir += first[i]
+        las += last[i]
+    }
+    return fir + las + length;
+}
+
+
+console.log('Exercise 13 Result:', createUsername("Samantha", "Green"));
+
+
+/*
+Exercise 14: numArgs()
+
+Challenge yourself with numArgs. This function should return the count of arguments passed to it when called.
+
+Complete the exercise in the space below:
+*/
+const numArgs = (...args) => {
+    return args.length;
+  }
+
+
+console.log('Exercise 14 Result:', numArgs(1, 2, 3, 4, 5));
